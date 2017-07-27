@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int isperfect(long long int n)
+{
+	long long int s=sqrt(n);
+	if(s*s==n)
+		return 1;
+	return 0;
+}
+int main()
+{
+	long long int a,b,tc,T,ans;
+	scanf("%lld",&T);
+	for(tc=0;tc<T;tc++)
+	{
+		scanf("%lld%lld",&a,&b);
+		if(isperfect(a))
+		{
+			ans=floor(sqrt(b))-floor(sqrt(a))+1;
+		}
+		else
+		{
+			ans=floor(sqrt(b))-floor(sqrt(a));
+		}
+		printf("%lld\n",ans);
+	}
+	return 0;
+}
